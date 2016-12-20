@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+    <!--  bean: - 原意：咖啡豆-->
+    <bean id="kfc" class="com.spring01.sercive.KfcWing"/>
+    <bean id="mcdonld" class="com.spring01.sercive.McdonldWing"/>
+    
+    <bean id="steelAxe" class="com.spring01.sercive.SteelAxe"/>
+    <bean id="stoneAxe" class="com.spring01.sercive.StoneAxe"/>
+    
+    <bean id="human" class="com.spring01.sercive.Human" init-method="init" 
+    destroy-method="destroy" scope="prototype">
+    
+    <property name="axe" ref="stoneAxe"></property>
+    </bean>
+    
+    
+    <bean id="car" class="com.spring01.pojo.Car">
+    <property name="name" value="宝马"></property>
+    <property name="price" value="500"></property>
+    
+  <!--  <constructor-arg type="double" value="400"></constructor-arg>
+   <constructor-arg type="java.lang.String" value="奔驰"></constructor-arg> --> 
+    
+    
+   <!--   <constructor-arg index="1" value="200"></constructor-arg>
+    <constructor-arg index="0" value="BMW"></constructor-arg> -->
+    </bean>
+</beans>
