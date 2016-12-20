@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="emp-crup" extends="struts-default" namespace="/">
+		<!-- 
+		Struts2实例化class属性中的类:com.spring.action.EmpAction 
+		Spring 实例化class属性中的类:empAction (Spring配置文件中的 bean id)
+		-->
+		<action name="empAction_*" method="{1}" class="empAction">
+
+			<result name="input" type="redirect">/index.jsp</result>
+			<result name="login" type="redirectAction">empAction_list</result>
+			<result name="list">/emplist.jsp</result>
+		</action>
+	</package>
+</struts>    
